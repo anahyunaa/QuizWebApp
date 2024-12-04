@@ -1,5 +1,5 @@
 <?php
-session_start(); // Memulai session
+session_start(); 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'] ?? '';
@@ -9,13 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Name or NIM cannot be empty!");
     }
 
-    // Simpan data pemain di session
     $_SESSION['name'] = $name;
     $_SESSION['nim'] = $nim;
-    $_SESSION['score'] = 0; // Awal skor 0
+    $_SESSION['score'] = 0; // Belum diset
 }
 
-// Saat selesai kuis, set skor di session
 if (isset($_POST['score'])) {
     $_SESSION['score'] = $_POST['score'];
     header('Location: result.php');
@@ -41,7 +39,6 @@ $questions = [
 <body>
     <div id="quiz-container">
         <div id="question-navigation">
-            <!-- Navigation buttons will be created dynamically -->
         </div>
         <p id="question-number"></p>
         <p id="question"></p>
@@ -53,7 +50,6 @@ $questions = [
     </div>
 
     <script>
-        // PHP Questions Array
         const questions = <?php echo json_encode($questions); ?>;
 
         let currentQuestionIndex = 0;

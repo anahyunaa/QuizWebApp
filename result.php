@@ -1,9 +1,7 @@
 <?php
-session_start(); // Memulai session
-
-// Periksa apakah data tersedia di session
+session_start(); 
 if (!isset($_SESSION['name'], $_SESSION['nim'], $_SESSION['score'])) {
-    header("Location: index.html"); // Redirect jika tidak ada data
+    header("Location: index.html"); 
     exit();
 }
 
