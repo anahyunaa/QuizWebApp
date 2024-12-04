@@ -9,16 +9,15 @@
 <body>
     <div class="form-container">
         <h2>Enter Your Details</h2>
-        <form id="player-form">
+        <form action="quiz.php" method="post">
             <label for="name">Name:</label>
-            <input type="text" id="name" required>
+            <input type="text" id="name" name="name" required>
             
             <label for="nim">NIM:</label>
-            <input type="text" id="nim" required>
+            <input type="text" id="nim" name="nim" required>
             
             <button type="submit">Start Quiz</button>
         </form>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
